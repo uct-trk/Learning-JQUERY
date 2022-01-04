@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<style>
+    .yeni-font {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <h1>JQUERY EĞİTİM</h1>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p id="lorem">Lorem.</p>
+    <div></div>
+    <div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, reiciendis!</p>
+    </div>
+    <form action="">
+        <p>
+            <label for="">Kullanıcı Adı</label>
+            <input type="text" name="" id="">
+        </p>
+        <p>
+            <label for="">Parola</label>
+            <input type="password" name="" id="">
+        </p>
+        <p>
+            <label for="">Email</label>
+            <input type="email" name="" id="">
+        </p>
+        <div>
+            <label for="">Bay</label>
+            <input type="radio" name="radio-grup" id="">
+        </div>
+        <div>
+            <label for="">Bayan</label>
+            <input type="radio" name="radio-grup" id="">
+        </div>
+
+    </form>
+    <ul>
+        <li>Google</li>
+        <li>Yandex</li>
+        <li>Safari</li>
+    </ul>
+    <button id="button1">Click me</button>
+    <button id="button">hadi tıkla</button>
+    <button id="olustur">Olustur</button>
+    <button id="cocuk">cocuk</button>
+    <button id="formlar">form kaldır</button>
+
+    <script>
+        $(function () {
+            $("#button1").click(() => {
+                $("li:not(':contains(Yandex)')").css("background", "blue")
+            })
+            $("#button").click(() => {
+                $("p:not(#lorem)").css("background", "yellow")
+            })
+            $("#olustur").click(function () {
+                $("div:empty").text("Yeni metin oluşturuldu")
+            })
+            $("#cocuk").click(function () {
+                $("div:has(p)").toggleClass("yeni-font")
+            })
+            $("#formlar").click(() => {
+                $("p :input").hide()
+            })
+        })
+    </script>
+
+</body>
+
+</html>
