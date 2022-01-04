@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document ready</title>
+</head>
+
+<body>
+    <p>Lorem, ipsum dolor.</p>
+    <p id="gizle">Lorem ipsum dolor sit amet. asdsad</p>
+    <div>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <button id="tikla">Gizle</button>
+    <button id="icerisi">div içini gizle</button>
+    <ul>
+        <li>Lorem ipsum dolor sit amet. 1</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <button id="gizle-li">Liste Elemanı Gizle</button>
+    <h3>Merhaba Uğurcan</h3>
+    <button id="renk">renk</button>
+</body>
+<script>
+    $(function () {
+        $("p").click(() => {
+            alert("selam")
+        })
+        $("#tikla").click(function () {
+            $("#gizle").hide()
+        })
+        $("#icerisi").click(function () {
+            $("div p").hide()
+        })
+        $("#gizle-li").click(function () {
+            $("ul li:first-child").hide()
+          })
+          $("#renk").click(() => {
+              $("h3").css("background","red")
+          })
+    })
+
+</script>
+
+</html>
