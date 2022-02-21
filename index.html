@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<style>
+    .yeni-font {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <h1>JQUERY EĞİTİM</h1>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p id="lorem">Lorem.</p>
+    <div id="mouseEnter">uzerine gel</div>
+    <div id="ayrilin">ayrılın</div>
+    <button class="double">cıft tıkla</button>
+    <p>username: <input type="text" name="username" id="username"></p>
+    <p>Email: <input type="text" name="email" id="email"></p>
+    <input id="artir" type="text" placeholder="tusa basın ve sayı artsın">arttır</input>
+    <p>Key Press Sayısı: <span class="artacak">0</span></p>
+    <p id="gizleme">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non aliquid nostrum asperiores eligendi esse illum, molestiae praesentium libero necessitatibus vero natus dicta quaerat repellendus odit voluptates debitis at sunt reiciendis.</p>
+
+
+    <script>
+        $(function () {
+            $("p").click(function () {
+                $("#lorem").hide();
+            })
+            $(".double").dblclick(function () {
+                $("h1").hide();
+            })
+            $("#mouseEnter").mouseenter(function () {
+                alert("Üzerine Geldiniz");
+            })
+            $("#ayrilin").mouseleave(function () {
+                alert("Alandan ayrıldınız");
+            })
+            $("input").focus(function () {
+                $(this).css("background", "black")
+            })
+            $("input").blur(function () {
+                $(this).css("background", "red")
+            })
+            let i = 0
+            $("#artir").keypress(function () {
+                $(".artacak").text(i += 1);
+            })
+
+            // birden fazla methot atamak stediğimizde on kullanırız
+            $("#gizleme").on("click",function(){
+                $(this).hide();
+            })
+            
+        })
+    </script>
+
+</body>
+
+</html>
