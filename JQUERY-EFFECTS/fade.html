@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: darkred;
+            display: none;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JQUERY EĞİTİM</h2>
+    <div id="div1" class="box">Jquery</div>
+    <div id="div2" class="box">ile</div>
+    <div id="div3" class="box">Efektler</div>
+    <button id="button">click</button>
+    <button id="out">fadeout</button>
+    <button id="toggle">fadetoggle</button>
+    <button id="callback">callback</button>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(() => {
+            $("#button").click(function () {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            })
+            $("#out").click(function () {
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("slow");
+                $("#div3").fadeOut(3000);
+            })
+            $("#toggle").click(function () {
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(3000);
+            })
+            $("#callback").click(function () {
+                $("#div1").fadeIn(3000, function () {
+                    $(this).fadeOut(3000, function () {
+                        alert("İşlem sona erdi")
+                    })
+                });
+
+            })
+
+        })
+    </script>
+</body>
+
+</html>
