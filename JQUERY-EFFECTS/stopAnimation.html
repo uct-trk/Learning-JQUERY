@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        #panel {
+            display: none;
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+        }
+
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h3>animasyon</h3>
+    <button id="stop">stop</button>
+    <button id="click">tıkla</button>
+    <div id="panel"></div>
+
+    <h3>Chaining</h3>
+    <button id="chain">chaining</button>
+    <div id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis nobis nihil quis nostrum soluta.
+        Optio
+        similique minus ullam dignissimos doloremque explicabo autem, iusto inventore natus, quas molestiae commodi
+        sequi. Quibusdam.</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(() => {
+            $("#click").click(function () {
+                $("#panel").slideToggle(3000);
+            });
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+            $("#chain").click(function () {
+                $("#content").css("color", "red").animate({fontSize: "3em"},1500).slideUp(3000).slideDown(5000)
+
+            });
+        })
+    </script>
+</body>
+
+</html>
