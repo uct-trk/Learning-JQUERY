@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        #panel {
+            display: none;
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+        }
+
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h3>Element ekleme</h3>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div id="content">append function change content</div>
+    <ol>
+        <li>Javascript</li>
+        <li>Jquery</li>
+        <li>Angular JS</li>
+    </ol>
+    <button id="btn">Goster değer</button>
+    <button id="btn1">Append Text</button>
+    <button id="btn2">Append List</button>
+    <button id="btn3">Prepend text</button>
+    <button id="btn4">Prepend list</button>
+    <button onclick="appendText()">Append Function</button>
+    <button id="btn5">Insert before</button>
+    <button id="btn6">Insert after</button>
+    <button onclick="afterText()">Insert After Fuction</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(() => {
+            $("#btn1").click(function () {
+                $("p").append("<span>REACT JS</span>");
+            });
+            $("#btn2").click(function () {
+                $("ol").append("<li>VUE JS</li>");
+            });
+            $("#btn3").click(function () {
+                $("p").prepend("<b>YENİ JS</b>");
+            });
+            $("#btn4").click(function () {
+                $("ol").prepend("<li>laravel</li>");
+            });
+            $("#btn5").click(function () {
+                $("ol").before("<div>öncesi</div>");
+            });
+            $("#btn6").click(function () {
+                $("ol").after("<div>sonrası</div>");
+            });
+
+        })
+        function appendText() {
+            let text1, text2, text3;
+            text1 = "<div>selam</div>";
+            text2 = "<div>ugurcan</div>";
+            text3 = "<div>nasılsın</div>";
+
+            $("#content").append(text1, text2, text3)
+
+        }
+    </script>
+</body>
+
+</html>

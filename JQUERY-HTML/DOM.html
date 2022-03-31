@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        #panel {
+            display: none;
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+        }
+
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h3>DOM</h3>
+    <p id="result">Lorem ipsum dolor sit amet, consectetur <a href="">ugurcan</a> adipisicing elit. Nihil neque
+        voluptatibus sequi dolorem quis
+        non omnis,
+        iure ex, eaque culpa praesentium cumque error corrupti esse iste incidunt? Et, consectetur cupiditate.</p>
+
+    <form action="">
+        <input type="text" value="selam">
+        <select name="" id="select">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+        </select>
+    </form>
+    <button id="show">Goster değer</button>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show html</button>
+    <div id="yazdir"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(() => {
+            var getValue = "";
+            $("#show").click(() => {
+                getValue += "input değeri: " + $("input:text").val() + "<br/>";
+                getValue += "input değeri: " + $("#select").val();
+                $("#yazdir").html(getValue)
+            })
+
+            $("#btn1").click(function () {
+                alert("metin text() ile alındı" + $("#result").text())
+            });
+            $("#btn2").click(function () {
+                alert("metin html() ile alındı" + $("#result").html())
+            });
+        })
+    </script>
+</body>
+
+</html>
